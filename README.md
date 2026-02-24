@@ -8,37 +8,37 @@ Sistem informasi berbasis web untuk mengelola operasional perpustakaan, termasuk
 
 ![Dashboard Preview](https://drive.google.com/uc?export=view&id=18akdPPhyTzAm7ZlPKKofLmWvjcBNYVz2?text=LibLoan+Admin+Dashboard)
 
-## 📋 Fitur Utama
+## Fitur Utama
 
-### 📚 Manajemen Katalog Buku
+### Manajemen Katalog Buku
 - CRUD buku dengan upload cover image
 - Kategorisasi buku
 - Manajemen stok otomatis
 - Pencarian dan filter (judul, penulis, ISBN, kategori, ketersediaan)
 
-### 👥 Manajemen Anggota
+### Manajemen Anggota
 - CRUD anggota perpustakaan
 - Status keanggotaan (Active/Blocked)
 - Riwayat peminjaman per anggota
 - Pencarian dan filter anggota
 
-### 📖 Transaksi Sirkulasi
+### Transaksi Sirkulasi
 - **Peminjaman**: Pilih anggota & buku, tentukan tanggal kembali
 - **Pengembalian**: Hitung denda otomatis (Rp 1.000/hari)
 - Validasi stok dan status anggota
 - Export laporan ke CSV
 
-### 📊 Dashboard & Laporan
+### Dashboard & Laporan
 - Statistik real-time (total buku, anggota, pinjaman, terlambat)
 - Daftar buku terlambat
 - Export laporan transaksi bulanan
 
-### 🔐 Authentication & Profile
+### Authentication & Profile
 - Login admin dengan session
 - Manage profile (nama, email)
 - Change password
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Komponen | Teknologi |
 |----------|-----------|
@@ -48,7 +48,7 @@ Sistem informasi berbasis web untuk mengelola operasional perpustakaan, termasuk
 | Database | MySQL 8.0+ |
 | Icons | Lucide Icons (SVG) |
 
-## 📋 Prerequisites
+## Prerequisites
 
 Pastikan server lokal Anda telah menginstall:
 
@@ -58,7 +58,7 @@ Pastikan server lokal Anda telah menginstall:
 - **MySQL** >= 8.0 atau **MariaDB** >= 10.3
 - **PHP Extensions**: `pdo_mysql`, `mbstring`, `xml`, `curl`, `zip`
 
-## 🚀 Installation
+## Installation
 
 ### 1. Clone Repository
 
@@ -142,7 +142,7 @@ Setelah menjalankan seeder, gunakan kredensial berikut untuk login:
 | **Email** | `admin@libloan.com` |
 | **Password** | `password` |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 libloan-admin/
@@ -169,7 +169,7 @@ libloan-admin/
     └── app/public/           # Uploaded files (book covers)
 ```
 
-## 🎨 UI Components
+## UI Components
 
 Sistem menggunakan komponen Blade yang reusable dengan desain Shadcn-inspired:
 
@@ -182,7 +182,7 @@ Sistem menggunakan komponen Blade yang reusable dengan desain Shadcn-inspired:
 - `<x-badge>` - Status badge
 - `<x-modal>` - Modal dialog
 
-## 📖 API Endpoints (Optional)
+## API Endpoints (Optional)
 
 Jika ingin mengembangkan API di masa depan:
 
@@ -191,7 +191,7 @@ Jika ingin mengembangkan API di masa depan:
 php artisan install:api
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run tests
@@ -201,7 +201,7 @@ php artisan test
 php artisan test --coverage
 ```
 
-## 📦 Deployment
+## Deployment
 
 ### Production Checklist
 
@@ -220,7 +220,7 @@ php artisan test --coverage
 - SSL/HTTPS untuk production
 - Queue worker untuk background jobs (optional)
 
-## 🔒 Security Features
+## Security Features
 
 - CSRF Protection pada semua form
 - Password hashing dengan bcrypt
@@ -228,11 +228,11 @@ php artisan test --coverage
 - XSS protection via Blade templating
 - Session-based authentication
 
-## 📝 License
+## License
 
 Project ini dilisensikan di bawah [MIT License](LICENSE).
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork repository ini
 2. Create feature branch (`git checkout -b feature/AmazingFeature`)
@@ -240,10 +240,11 @@ Project ini dilisensikan di bawah [MIT License](LICENSE).
 4. Push ke branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
-## 📧 Contact
+## Contact
 
 Untuk pertanyaan atau dukungan, silakan buat issue di repository ini.
 
 ---
 
-**Dibuat dengan ❤️ menggunakan Laravel**
+**Copyright 2026 LibLoan Admin by Zinedine Zidanir Rizki. All rights reserved.**
+
