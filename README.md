@@ -63,8 +63,8 @@ Pastikan server lokal Anda telah menginstall:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/libloan-admin.git
-cd libloan-admin
+git clone https://github.com/zinedine098/Library_Management_System.git
+cd Library_Management_System
 ```
 
 ### 2. Install Dependencies
