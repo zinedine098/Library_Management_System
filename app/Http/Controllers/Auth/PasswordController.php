@@ -14,7 +14,7 @@ class PasswordController extends Controller
      */
     public function edit()
     {
-        return view('auth.change-password');
+        return redirect()->route('profile.edit');
     }
 
     /**
@@ -31,6 +31,6 @@ class PasswordController extends Controller
             'password' => Hash::make($validated['password']),
         ]);
 
-        return back()->with('success', 'Password updated successfully.');
+        return back()->with('password-success', 'Password updated successfully.');
     }
 }

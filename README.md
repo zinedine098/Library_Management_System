@@ -1,59 +1,249 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LibLoan Admin - Sistem Administrasi Peminjaman Buku Perpustakaan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php&logoColor=white)](https://php.net)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-## About Laravel
+Sistem informasi berbasis web untuk mengelola operasional perpustakaan, termasuk manajemen anggota, katalog buku, transaksi peminjaman, pengembalian, dan perhitungan denda.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Dashboard Preview](https://via.placeholder.com/1200x600.png?text=LibLoan+Admin+Dashboard)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 📚 Manajemen Katalog Buku
+- CRUD buku dengan upload cover image
+- Kategorisasi buku
+- Manajemen stok otomatis
+- Pencarian dan filter (judul, penulis, ISBN, kategori, ketersediaan)
 
-## Learning Laravel
+### 👥 Manajemen Anggota
+- CRUD anggota perpustakaan
+- Status keanggotaan (Active/Blocked)
+- Riwayat peminjaman per anggota
+- Pencarian dan filter anggota
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 📖 Transaksi Sirkulasi
+- **Peminjaman**: Pilih anggota & buku, tentukan tanggal kembali
+- **Pengembalian**: Hitung denda otomatis (Rp 1.000/hari)
+- Validasi stok dan status anggota
+- Export laporan ke CSV
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📊 Dashboard & Laporan
+- Statistik real-time (total buku, anggota, pinjaman, terlambat)
+- Daftar buku terlambat
+- Export laporan transaksi bulanan
 
-## Laravel Sponsors
+### 🔐 Authentication & Profile
+- Login admin dengan session
+- Manage profile (nama, email)
+- Change password
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Tech Stack
 
-### Premium Partners
+| Komponen | Teknologi |
+|----------|-----------|
+| Backend | Laravel 12 |
+| Frontend | Blade Templates + Tailwind CSS |
+| Interactivity | Alpine.js |
+| Database | MySQL 8.0+ |
+| Icons | Lucide Icons (SVG) |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📋 Prerequisites
 
-## Contributing
+Pastikan server lokal Anda telah menginstall:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **PHP** >= 8.2
+- **Composer** (latest version)
+- **Node.js** >= 18.x
+- **MySQL** >= 8.0 atau **MariaDB** >= 10.3
+- **PHP Extensions**: `pdo_mysql`, `mbstring`, `xml`, `curl`, `zip`
 
-## Code of Conduct
+## 🚀 Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Clone Repository
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/your-username/libloan-admin.git
+cd libloan-admin
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Install Dependencies
 
-## License
+```bash
+# Install PHP dependencies
+composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Install Node.js dependencies
+npm install
+```
+
+### 3. Environment Configuration
+
+```bash
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+### 4. Database Configuration
+
+Edit file `.env` dan sesuaikan konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_perpus_akreditasi
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+### 5. Run Migrations & Seeders
+
+```bash
+# Run migrations and seed initial data
+php artisan migrate:fresh --seed
+```
+
+### 6. Create Storage Link
+
+```bash
+# Create symbolic link for book cover images
+php artisan storage:link
+```
+
+### 7. Build Frontend Assets
+
+```bash
+# Development build (with hot reload)
+npm run dev
+
+# Or production build
+npm run build
+```
+
+### 8. Start Development Server
+
+```bash
+# Start Laravel development server
+php artisan serve
+```
+
+Aplikasi akan berjalan di: **http://localhost:8000**
+
+## 👤 Default Login Credentials
+
+Setelah menjalankan seeder, gunakan kredensial berikut untuk login:
+
+| Field | Value |
+|-------|-------|
+| **Email** | `admin@libloan.com` |
+| **Password** | `password` |
+
+## 📁 Project Structure
+
+```
+libloan-admin/
+├── app/
+│   ├── Http/Controllers/     # Controllers (Auth, Books, Members, Borrowings)
+│   ├── Models/               # Eloquent Models (Book, Member, Borrowing, Category)
+│   └── Providers/            # Service Providers
+├── database/
+│   ├── migrations/           # Database migrations
+│   └── seeders/              # Database seeders
+├── resources/
+│   ├── css/                  # Tailwind CSS
+│   ├── js/                   # Alpine.js
+│   └── views/                # Blade templates
+│       ├── components/       # Reusable Blade components
+│       ├── layouts/          # Main layout
+│       ├── books/            # Book views
+│       ├── members/          # Member views
+│       ├── borrowings/       # Borrowing views
+│       └── profile/          # Profile views
+├── routes/
+│   └── web.php               # Web routes
+└── storage/
+    └── app/public/           # Uploaded files (book covers)
+```
+
+## 🎨 UI Components
+
+Sistem menggunakan komponen Blade yang reusable dengan desain Shadcn-inspired:
+
+- `<x-layouts.app>` - Main layout dengan sidebar
+- `<x-card>` - Card container
+- `<x-table>` - Styled table
+- `<x-input>` - Input field
+- `<x-select>` - Dropdown select
+- `<x-button>` - Button dengan variants
+- `<x-badge>` - Status badge
+- `<x-modal>` - Modal dialog
+
+## 📖 API Endpoints (Optional)
+
+Jika ingin mengembangkan API di masa depan:
+
+```bash
+# Install API support
+php artisan install:api
+```
+
+## 🧪 Testing
+
+```bash
+# Run tests
+php artisan test
+
+# Run tests with coverage
+php artisan test --coverage
+```
+
+## 📦 Deployment
+
+### Production Checklist
+
+1. Set `APP_ENV=production` dan `APP_DEBUG=false` di `.env`
+2. Run `composer install --optimize-autoloader --no-dev`
+3. Run `npm run build` untuk production assets
+4. Run `php artisan config:cache`
+5. Run `php artisan route:cache`
+6. Run `php artisan view:cache`
+7. Setup proper file permissions untuk `storage/` dan `bootstrap/cache/`
+
+### Recommended Server Requirements
+
+- PHP 8.2+ dengan OPcache enabled
+- MySQL 8.0+ dengan indexing pada kolom search
+- SSL/HTTPS untuk production
+- Queue worker untuk background jobs (optional)
+
+## 🔒 Security Features
+
+- CSRF Protection pada semua form
+- Password hashing dengan bcrypt
+- SQL Injection protection via Eloquent ORM
+- XSS protection via Blade templating
+- Session-based authentication
+
+## 📝 License
+
+Project ini dilisensikan di bawah [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+1. Fork repository ini
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+## 📧 Contact
+
+Untuk pertanyaan atau dukungan, silakan buat issue di repository ini.
+
+---
+
+**Dibuat dengan ❤️ menggunakan Laravel**

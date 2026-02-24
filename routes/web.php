@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\BorrowingController;
+use App\Http\Controllers\ProfileController;
 
 // Guest routes
 Route::middleware('guest')->group(function () {
@@ -22,7 +23,12 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 
-    // Change Password
+    // Profile
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
+
+    // Change Password (legacy route, redirect to profile)
     Route::get('change-password', [PasswordController::class, 'edit'])
         ->name('change-password.edit');
     Route::put('change-password', [PasswordController::class, 'update'])
