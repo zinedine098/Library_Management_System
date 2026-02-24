@@ -6,7 +6,7 @@
 
 Sistem informasi berbasis web untuk mengelola operasional perpustakaan, termasuk manajemen anggota, katalog buku, transaksi peminjaman, pengembalian, dan perhitungan denda.
 
-![Dashboard Preview](https://via.placeholder.com/1200x600.png?text=LibLoan+Admin+Dashboard)
+![Dashboard Preview](https://drive.google.com/uc?export=view&id=18akdPPhyTzAm7ZlPKKofLmWvjcBNYVz2?text=LibLoan+Admin+Dashboard)
 
 ## 📋 Fitur Utama
 
